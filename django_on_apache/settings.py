@@ -26,6 +26,8 @@ SECRET_KEY = 'django-insecure-iwkwp(1!8*ul2x^kb8ov1q#ik+c7bwxx$ffd@@y56$q@da9qus
 DEBUG = True
 
 ALLOWED_HOSTS = [
+            '127.0.0.1:8000',
+            '127.0.0.1',
             '56.228.34.200',
             'miro-pasko-portfolio-app.me.uk',
             'www.miro-pasko-portfolio-app.me.uk',
@@ -43,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'main.apps.MainConfig'
 ]
 
 MIDDLEWARE = [
@@ -60,7 +63,9 @@ ROOT_URLCONF = 'django_on_apache.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / "templates/"
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
